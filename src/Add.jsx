@@ -1,3 +1,5 @@
+// 우대금리적용되면 그 키워드에 맞는 상품을 골라 그에 맞는 금리를 올려주는 함수
+
 export default function Add({ firstData, newData }) {
     const resultMap = {};
 

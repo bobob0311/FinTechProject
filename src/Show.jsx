@@ -1,6 +1,6 @@
 import { useState } from "react";
-import './Box.css'
 import Optimal from "./Timal";
+import './Box.css'
 
 import Add from "./Add"
 import Subtract from "./Subtract"
@@ -92,6 +92,7 @@ const temp_data4 = [
 
 
 
+// 우대조건 키워드 버튼을 토글형식 Add,Subtract연산을 해주고 최적을 제시 최적이외에도 나머지 순위도 제시
 
 export default function Show({ input, deadline }) {
     const a = first_data.map(data => ({ ...data, Calculation: data.num }))
@@ -102,8 +103,6 @@ export default function Show({ input, deadline }) {
         const updatedData = Add({ firstData: item, newData });
         const sortedData = updatedData.sort((a, b) => b.Calculation - a.Calculation); // Sort the data
         setItem(sortedData);
-
-        // Add selected condition
         setSelectedConditions([...selectedConditions, newData]);
     };
 
@@ -111,8 +110,6 @@ export default function Show({ input, deadline }) {
         const updatedData = Subtract({ firstData: item, newData: conditionToRemove });
         const sortedData = updatedData.sort((a, b) => b.Calculation - a.Calculation);
         setItem(sortedData);
-
-        // Remove selected condition
         setSelectedConditions(selectedConditions.filter(condition => condition !== conditionToRemove));
     };
 
@@ -125,7 +122,6 @@ export default function Show({ input, deadline }) {
             <hr />
             <h2>우대조건</h2>
             <div>
-                {/* Toggle color on click */}
                 <span className={boxClassName(temp_data1)} onClick={() => selectedConditions.includes(temp_data1) ? handleRemoveCondition(temp_data1) : handleAddCondition(temp_data1)}>
                     비대면가입
                 </span>

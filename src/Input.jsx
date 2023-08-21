@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+// 사용자가 기한과 금액을 입력할 수 있는 형식을 만들고 이를 상위 컴포넌트에 전달하도록 생성
+
 export default function Input({ onNumberChange, onSliderChange }) {
     const [number, setNumber] = useState("");
     const [sliderValue, setSliderValue] = useState(0);

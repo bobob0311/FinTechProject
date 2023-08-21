@@ -1,3 +1,5 @@
+// 사용자가 입력한 금액과 상품의 최대한도,금리를 고려하여 최적의 상품을 나열
+
 export default function Optimal({ data, input }) {
     return (
         <div>

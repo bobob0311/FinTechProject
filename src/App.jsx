@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-//import './App.css'
+// Header,Input,Clicker 컴포넌트 불러와 사용
 import Header from './Header';
 import Input from './Input'
 import Clicker from './Clicker';
 
+
+
+// 컴포넌트 사이에 전달을 위해서 useState를 사용 설정한 금액과 기한을 넘겨준다.
 function App() {
   const [number, setNumber] = useState("");
 
