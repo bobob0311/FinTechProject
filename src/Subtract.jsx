@@ -1,6 +1,6 @@
 // 우대금리적용을 해제하면 그 키워드에 맞는 상품을 골라 적용되기 전으로 되돌려주는 함수
 
-export default function Add({ firstData, newData }) {
+export default function Subtract({ firstData, newData }) {
     const resultMap = {};
 
     // 복제된 기존 데이터로 resultMap 초기화
