@@ -29,7 +29,6 @@ export default function Optimal({ data, input }) {
                     }
 
                 })}
-                <span>아아아아아아아아아아아아아앙아아아</span>
             </ul>
         </div>
     )

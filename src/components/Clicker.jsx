@@ -10,9 +10,9 @@ export default function Clicker({ input, value }) {
     const handleButtonClick = () => {
         setShowClick(true)
         setAmount(input);
-
         setDeadlines(value)
     };
+
 
     return (
         <div>
