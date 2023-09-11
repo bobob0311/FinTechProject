@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Optimal from "./Timal";
 import './Box.css'
 import Condition from "./Condition";
+import ListItem from "./ListItem";
 
 const first_data = [
     {
@@ -109,11 +110,17 @@ export default function Show({ input, deadline }) {
                 <hr />
                 <h2>우대 금리가 높은 순서에 따른 나열</h2>
                 <ul>
+                    <ul>
+                        {item.slice(0, 6).map((i) => (
+                            <ListItem itemKey={i.id} num1={i.num.toFixed(3)} num2={i.Calculation.toFixed(3)} />
+                        ))}
+                    </ul>
+                    {/* <OneItem data={item} number={1} />
                     {item.map((i) => (
                         <li key={i.id}>
                             id: {i.id}, 기본금리: {i.num.toFixed(3)}, 우대적용금리 {i.Calculation.toFixed(3)}
                         </li>
-                    ))}
+                    ))} */}
                 </ul>
             </div>
         </div>
