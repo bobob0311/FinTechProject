@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 
-export default function ListItem({
-    id
-    , bank_name
-    , item_name
-    , interest_rate
-    , method
-    , who
-    , ca_interest_rate
-}) {
+export default function ListItem({ id, bank_name, item_name, interest_rate, method, who, ca_interest_rate }) {
     const [toggle, setToggle] = useState(false)
 
     const handleToggle = () => {
