@@ -3,25 +3,29 @@ import React, { useState, useEffect } from "react";
 import Add from "../utill/Add";
 import Subtract from "../utill/Subtract";
 
-export default function Condition({ name, data, nowdata, onDataChange }) {
+export default function Condition({ name, data, what, nowdata, onDataChange }) {
+
+    const filteredObjects = data.filter((data) => data.preferential_condition === what)
+
+
     const [selectedConditions, setSelectedConditions] = useState([]);
 
     const handleAddCondition = (conditionToAdd) => {
         const updatedData = Add({ firstData: nowdata, newData: conditionToAdd });
         const sortedData = updatedData.sort((a, b) => b.Calculation - a.Calculation);
-        onDataChange(sortedData); // 상위 컴포넌트의 상태 업데이트
+        onDataChange(sortedData);
         setSelectedConditions([...selectedConditions, conditionToAdd]);
     };
 
     const handleRemoveCondition = (conditionToRemove) => {
         const updatedData = Subtract({ firstData: nowdata, newData: conditionToRemove });
         const sortedData = updatedData.sort((a, b) => b.Calculation - a.Calculation);
-        onDataChange(sortedData); // 상위 컴포넌트의 상태 업데이트
+        onDataChange(sortedData);
         setSelectedConditions(selectedConditions.filter(condition => condition !== conditionToRemove));
     };
 
     useEffect(() => {
-        onDataChange(nowdata); // 초기 상태 설정
+        onDataChange(nowdata);
     }, [onDataChange, nowdata]);
 
     const boxClassName = (conditionData) => {
@@ -29,7 +33,7 @@ export default function Condition({ name, data, nowdata, onDataChange }) {
     }
 
     return (
-        <span className={boxClassName(data)} onClick={() => selectedConditions.includes(data) ? handleRemoveCondition(data) : handleAddCondition(data)}>
+        <span className={boxClassName(filteredObjects)} onClick={() => selectedConditions.includes(filteredObjects) ? handleRemoveCondition(filteredObjects) : handleAddCondition(filteredObjects)}>
             {name}
         </span>
     )

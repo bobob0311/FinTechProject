@@ -7,17 +7,17 @@ export default function Optimal({ data, input }) {
             <ul>
                 {data.map((item) => {
                     if (input > 0) {
-                        input -= item.upperbound;
+                        input -= item.moneyLoe;
                         if (input > 0) {
                             return (
                                 <li key={item.id}>
-                                    id: {item.id}, 기본금리:{item.num.toFixed(3)}, 우대금리: {item.Calculation.toFixed(3)}, 넣어야되는 금액: {item.upperbound}
+                                    은행이름: {item.bank_name}, 기한: {item.depositPeriod} 기본금리:{item.interest_rate.toFixed(3)}, 우대금리: {item.Calculation.toFixed(3)}, 넣어야되는 금액: {item.moneyLoe}
                                 </li>
                             );
                         } else {
                             return (
                                 <li key={item.id}>
-                                    id: {item.id}, 기본금리:{item.num.toFixed(3)}, 우대금리: {item.Calculation.toFixed(3)}, 넣어야되는 금액: {input + item.upperbound}
+                                    은행이름: {item.bank_name}, 기한: {item.depositPeriod} 기본금리:{item.interest_rate.toFixed(3)}, 우대금리: {item.Calculation.toFixed(3)}, 넣어야되는 금액: {input + item.moneyLoe}
                                 </li>
                             )
 

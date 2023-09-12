@@ -1,91 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import Optimal from "./Timal";
 import './Box.css'
 import Condition from "./Condition";
 import ListItem from "./ListItem";
 
-const first_data = [
-    {
-        id: 1,
-        num: 0.01,
-        upperbound: 5000000
-    },
-    {
-        id: 2,
-        num: 0.02,
-        upperbound: 5000000
-    },
-    {
-        id: 3,
-        num: 0.01,
-        upperbound: 5000000
-    },
-    {
-        id: 4,
-        num: 0.02,
-        upperbound: 5000000
-    },
-    {
-        id: 5,
-        num: 0.01,
-        upperbound: 5000000
-    },
-    {
-        id: 6,
-        num: 0.02,
-        upperbound: 5000000
-    }
-];
-
-const temp_data1 = [
-    {
-        id: 1,
-        num2: 0.001
-    },
-    {
-        id: 2,
-        num2: 0.002
-    }
-];
-
-const temp_data2 = [
-    {
-        id: 1,
-        num2: 0.03
-    },
-    {
-        id: 2,
-        num2: 0.03
-    }
-];
-
-const temp_data3 = [
-    {
-        id: 1,
-        num2: 0.001
-    },
-    {
-        id: 2,
-        num2: 0.002
-    }
-];
-
-const temp_data4 = [
-    {
-        id: 1,
-        num2: 0.001
-    },
-    {
-        id: 2,
-        num2: 0.002
-    }
-];
+// first_item
+// second_item
 
 export default function Show({ input, deadline }) {
-    const a = first_data.map(data => ({ ...data, Calculation: data.num }))
-    const nowdata = a.sort((a, b) => b.Calculation - a.Calculation);
+    const [firstItem, setFirstItem] = useState([]);
+    useEffect(() => {
+        fetch("/api/hello")
+            .then((res) => { return res.json(); })
+            .then((data) => { setFirstItem(data); })
+    }, []);
 
-    const [item, setItem] = useState(nowdata);
+
+
+    const temp = first_item.map(data => ({ ...data, Calculation: data.num }))
+    const now_item = temp.sort((a, b) => b.Calculation - a.Calculation);
+
+    const [item, setItem] = useState(now_item);
 
     const handleNewItem = (newItem) => {
         setItem(newItem);
@@ -109,19 +44,14 @@ export default function Show({ input, deadline }) {
                 <hr />
                 <hr />
                 <h2>우대 금리가 높은 순서에 따른 나열</h2>
+
                 <ul>
-                    <ul>
-                        {item.slice(0, 6).map((i) => (
-                            <ListItem itemKey={i.id} num1={i.num.toFixed(3)} num2={i.Calculation.toFixed(3)} />
-                        ))}
-                    </ul>
-                    {/* <OneItem data={item} number={1} />
-                    {item.map((i) => (
-                        <li key={i.id}>
-                            id: {i.id}, 기본금리: {i.num.toFixed(3)}, 우대적용금리 {i.Calculation.toFixed(3)}
-                        </li>
-                    ))} */}
+                    {item.slice(0, 5).map((i) => (
+                        <ListItem itemKey={i.id} num1={i.num.toFixed(3)} num2={i.Calculation.toFixed(3)} />
+                    ))}
                 </ul>
+
+
             </div>
         </div>
     );

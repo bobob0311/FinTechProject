@@ -1,6 +1,19 @@
 import React, { useState } from "react";
 
-export default function ListItem({ itemKey, num1, num2 }) {
+export default function ListItem({
+    id
+    , bank_name
+    , item_name
+    , depositPeriod
+    , interest_rate
+    , moneyGoe
+    , moneyLoe
+    , preferential_condition
+    , preferential_interest_rate
+    , method
+    , who
+    , ca_interest_rate
+}) {
     const [toggle, setToggle] = useState(false)
 
     const handleToggle = () => {
@@ -12,11 +25,13 @@ export default function ListItem({ itemKey, num1, num2 }) {
     }
     return (
         <>
-            <li key={itemKey}>
-                id: {itemKey}, 기본금리: {num1}, 우대적용금리 {num2}      <button onClick={handleToggle}>Show !!!!</button>
+            <li key={id}>
+                은행이름: {bank_name} 상품이름: {item_name} 기본금리: {interest_rate}, 우대적용금리 {ca_interest_rate}      <button onClick={handleToggle}>Show !!!!</button>
             </li>
             {/* 버튼에 onClick 이벤트 추가 */}
-            {toggle && <div>추가 정보 표시</div>} {/* toggle 값에 따라 정보를 표시 */}
+            {toggle &&
+                <div>
+                </div>} {/* toggle 값에 따라 정보를 표시 */}
 
         </>
 

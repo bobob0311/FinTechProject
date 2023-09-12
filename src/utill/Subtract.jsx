@@ -11,7 +11,7 @@ export default function Subtract({ firstData, newData }) {
     // 새로운 데이터를 기존 데이터에 더함
     for (const item2 of newData) {
         if (resultMap[item2.id]) {
-            resultMap[item2.id].Calculation -= item2.num2;
+            resultMap[item2.id].Calculation -= item2.preferential_interest_rate;
         }
     }
 
