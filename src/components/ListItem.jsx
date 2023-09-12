@@ -4,12 +4,7 @@ export default function ListItem({
     id
     , bank_name
     , item_name
-    , depositPeriod
     , interest_rate
-    , moneyGoe
-    , moneyLoe
-    , preferential_condition
-    , preferential_interest_rate
     , method
     , who
     , ca_interest_rate
@@ -31,6 +26,12 @@ export default function ListItem({
             {/* 버튼에 onClick 이벤트 추가 */}
             {toggle &&
                 <div>
+                    <span>
+                        가입 방법 {method}
+                    </span>
+                    <span>
+                        가입대상 {who}
+                    </span>
                 </div>} {/* toggle 값에 따라 정보를 표시 */}
 
         </>

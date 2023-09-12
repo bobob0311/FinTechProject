@@ -4,23 +4,26 @@ import './Box.css'
 import Condition from "./Condition";
 import ListItem from "./ListItem";
 
-// first_item
-// second_item
 
 export default function Show({ input, deadline }) {
     const [firstItem, setFirstItem] = useState([]);
     useEffect(() => {
-        fetch("/api/hello")
+        fetch("/api/hello") // 첫번재 입력
             .then((res) => { return res.json(); })
             .then((data) => { setFirstItem(data); })
     }, []);
 
+    const [secondItem, setSecondItem] = useState([]);
+    useEffect(() => {
+        fetch("/api/hello") // 두번째 입력
+            .then((res) => { return res.json(); })
+            .then((data) => { setSecondItem(data); })
+    }, []);
 
+    const temp = firstItem.map(data => ({ ...data, Calculation: data.num }))
+    const nowItem = temp.sort((a, b) => b.Calculation - a.Calculation);
 
-    const temp = first_item.map(data => ({ ...data, Calculation: data.num }))
-    const now_item = temp.sort((a, b) => b.Calculation - a.Calculation);
-
-    const [item, setItem] = useState(now_item);
+    const [item, setItem] = useState(nowItem);
 
     const handleNewItem = (newItem) => {
         setItem(newItem);
@@ -32,10 +35,10 @@ export default function Show({ input, deadline }) {
             <h2>우대조건</h2>
             <div>
                 {/* 각 조건 컴포넌트를 렌더링 */}
-                <Condition name={"재예치"} data={temp_data1} nowdata={item} onDataChange={handleNewItem} />
-                <Condition name={"비대면가입"} data={temp_data2} nowdata={item} onDataChange={handleNewItem} />
-                <Condition name={"뭐라하노"} data={temp_data3} nowdata={item} onDataChange={handleNewItem} />
-                <Condition name={"모르겠다~"} data={temp_data4} nowdata={item} onDataChange={handleNewItem} />
+                <Condition name={"재예치"} data={secondItem} nowdata={item} what={재예치의 이름} onDataChange={handleNewItem} />
+                <Condition name={"비대면가입"} data={secondItem} nowdata={item} what={비대면가입의 이름} onDataChange={handleNewItem} />
+                <Condition name={"뭐라하노"} data={secondItem} nowdata={item} what={ } onDataChange={handleNewItem} />
+                <Condition name={"모르겠다~"} data={secondItem} nowdata={item} what={ } onDataChange={handleNewItem} />
             </div>
             <div>
                 <ul>
@@ -47,7 +50,7 @@ export default function Show({ input, deadline }) {
 
                 <ul>
                     {item.slice(0, 5).map((i) => (
-                        <ListItem itemKey={i.id} num1={i.num.toFixed(3)} num2={i.Calculation.toFixed(3)} />
+                        <ListItem bank_name={i.bank_name} item_name={i.item_name} interest_rate={i.interest_rate.toFixed(3)} ca_interest_rate={i.ca_interest_rate.toFixed(3)} who={i.who} method={i.method} />
                     ))}
                 </ul>
 
