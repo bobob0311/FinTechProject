@@ -9,6 +9,7 @@ import Clicker from './components/Clicker';
 
 // 컴포넌트 사이에 전달을 위해서 useState를 사용 설정한 금액과 기한을 넘겨준다.
 function App() {
+
   const [firstItem, setFirstItem] = useState([]);
   useEffect(() => {
     fetch("/api/hello") // 첫번재 입력

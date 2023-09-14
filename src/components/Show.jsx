@@ -37,7 +37,7 @@ export default function Show({ input, deadline, firstItem, secondItem }) {
 
                 <ul>
                     {item.slice(0, 5).map((i) => (
-                        <ListItem bank_name={i.bank_name} item_name={i.item_name} interest_rate={i.interest_rate.toFixed(3)} ca_interest_rate={i.ca_interest_rate.toFixed(3)} who={i.who} method={i.method} />
+                        <ListItem id={i.id} bank_name={i.bank_name} item_name={i.item_name} interest_rate={i.interest_rate.toFixed(3)} ca_interest_rate={i.ca_interest_rate.toFixed(3)} who={i.who} method={i.method} />
                     ))}
                 </ul>
 
