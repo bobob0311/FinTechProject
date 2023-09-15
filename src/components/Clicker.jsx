@@ -10,8 +10,9 @@ export default function Clicker({ input, value, firstItem, secondItem }) {
 
 
     useEffect(() => {
-        setItem(firstItem.filter((firstItem) => firstItem.depositPeriod === deadlines));
+        setItem(firstItem.filter((firstItem) => firstItem.depositPeriod === deadlines + "개월"));
     }, [firstItem, deadlines]);
+
 
     const handleButtonClick = () => {
         setShowClick(true)
