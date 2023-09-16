@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ListItem({ id, bank_name, item_name, interest_rate, method, who, ca_interest_rate }) {
+export default function ListItem({ id, bank_name, item_name, interest_rate, method, who, ca_interest_rate, link }) {
     const [toggle, setToggle] = useState(false)
 
     const handleToggle = () => {
@@ -27,8 +27,8 @@ export default function ListItem({ id, bank_name, item_name, interest_rate, meth
                     </div>
                     {link !== null && (
                         <div>
-                            <button><a href={link}></a> </button>
-                        </div>)
+                            <a href={link} target="_blank"></a>
+                        </div>)}
 
                 </>
             }
