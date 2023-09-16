@@ -25,9 +25,11 @@ export default function ListItem({ id, bank_name, item_name, interest_rate, meth
                     <div>
                         가입대상 {who}
                     </div>
-                    <div>
-                        <button>주소링크..? </button>
-                    </div>
+                    {link !== null && (
+                        <div>
+                            <button><a href={link}></a> </button>
+                        </div>)
+
                 </>
             }
 
