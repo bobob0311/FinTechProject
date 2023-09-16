@@ -4,21 +4,19 @@ import Show from './Show';
 export default function Clicker({ input, value, firstItem, secondItem }) {
 
     const [item, setItem] = useState([]);
-    const [showClick, setShowClick] = useState(false); // 항상 결과 보이도록 설정
+    const [showClick, setShowClick] = useState(false);
+
+    // 고객이 넣을금액
     const [amount, setAmount] = useState(null);
-    const [deadlines, setDeadlines] = useState(null);
-
-
-    useEffect(() => {
-        setItem(firstItem.filter((firstItem) => firstItem.depositPeriod === deadlines + "개월"));
-    }, [firstItem, deadlines]);
-
 
     const handleButtonClick = () => {
-        setShowClick(true)
+        setShowClick(true);
         setAmount(input);
-        setDeadlines(value)
+        setItem(firstItem.filter((firstItem) => firstItem.depositPeriod === value + "개월"));
     };
+
+    console.log(item);
+
 
 
     return (
@@ -26,9 +24,8 @@ export default function Clicker({ input, value, firstItem, secondItem }) {
             <p>밑에 버튼을 누르면 이제 우대조건 등이 나옴</p>
             <button onClick={handleButtonClick}>Click</button>
             {showClick && (
-                <Show input={amount} deadline={deadlines} firstItem={item} secondItem={secondItem} />
+                <Show input={amount} firstItem={item} secondItem={secondItem} />
             )}
-            <p>{deadlines}</p>
         </div>
     );
 }

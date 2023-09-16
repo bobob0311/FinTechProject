@@ -12,19 +12,24 @@ export default function ListItem({ id, bank_name, item_name, interest_rate, meth
     }
     return (
         <>
-            <li key={id}>
-                은행이름: {bank_name} 상품이름: {item_name} 기본금리: {interest_rate}, 우대적용금리 {ca_interest_rate}      <button onClick={handleToggle}>Show !!!!</button>
+            <li key={id} onClick={handleToggle}>
+                은행이름: {bank_name} 상품이름: {item_name} 기본금리: {interest_rate}, 우대적용금리 {ca_interest_rate}
             </li>
+
             {/* 버튼에 onClick 이벤트 추가 */}
             {toggle &&
-                <div>
-                    <span>
+                <>
+                    <div>
                         가입 방법 {method}
-                    </span>
-                    <span>
+                    </div>
+                    <div>
                         가입대상 {who}
-                    </span>
-                </div>} {/* toggle 값에 따라 정보를 표시 */}
+                    </div>
+                    <div>
+                        <button>주소링크..? </button>
+                    </div>
+                </>
+            }
 
         </>
 
