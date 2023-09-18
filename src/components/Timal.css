@@ -1,0 +1,28 @@
+/* 목록 스타일 */
+.custom-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* 목록 항목 스타일 */
+.list-item {
+    padding: 10px;
+}
+
+/* 각 데이터 필드 스타일 */
+.label {
+    font-weight: bold;
+}
+
+/* 데이터 필드와 값 사이의 가로 배치 */
+.list-item>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 각 데이터 필드 스타일 */
+.value {
+    margin-left: 10px;
+    /* 데이터 필드와 값 사이의 간격을 조절 */
+}

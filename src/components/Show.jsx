@@ -3,7 +3,7 @@ import Optimal from "./Timal";
 import './Box.css'
 import Condition from "./Condition";
 import ListItem from "./ListItem";
-
+import './Show.css'
 
 export default function Show({ input, firstItem, secondItem }) {
 
@@ -20,7 +20,7 @@ export default function Show({ input, firstItem, secondItem }) {
 
 
     return (
-        <div>
+        <div className='pad' id="mainbox">
             <hr />
             <h2>우대조건</h2>
             <div>
@@ -37,21 +37,44 @@ export default function Show({ input, firstItem, secondItem }) {
 
             </div>
             <div>
-                <ul>
+                <h2>현재 최적의 상품은?</h2>
+                <div className="optimalbox">
                     <Optimal data={item} input={input} />
-                </ul>
+                </div>
                 <hr />
-                <hr />
-                <h2>우대 금리가 높은 순서에 따른 나열</h2>
-
-                <ul>
-                    {item.slice(0, 5).map((i) => (
-                        <ListItem id={i.id} bank_name={i.bank_name} item_name={i.item_name} interest_rate={i.interest_rate} ca_interest_rate={i.ca_interest_rate} who={i.who} method={i.method} link={i.link} />
-                    ))}
-                </ul>
-
-
             </div>
+            <h2>우대 금리가 높은 순서에 따른 나열</h2>
+
+
+            <div className="tablebox">
+                <table>
+                    <thead>
+                        <tr>
+                            <th className="table-header">은행</th>
+                            <th className="table-header">상품명</th>
+                            <th className="table-header">기본금리</th>
+                            <th className="table-header">우대적용금리</th>
+                        </tr>
+                    </thead>
+
+                    {item.slice(0, 5).map((i) => (
+                        <ListItem
+                            id={i.id}
+                            bank_name={i.bank_name}
+                            item_name={i.item_name}
+                            interest_rate={i.interest_rate}
+                            ca_interest_rate={i.ca_interest_rate}
+                            who={i.who}
+                            method={i.method}
+                            link={i.link} />
+                    ))}
+
+                </table>
+            </div>
+
+            <ul>
+            </ul>
         </div>
+
     );
 }

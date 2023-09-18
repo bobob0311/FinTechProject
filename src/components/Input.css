@@ -1,0 +1,51 @@
+/* input.css */
+.space {
+    margin: 60px 0px 0px 0px;
+    padding: 2rem 10rem;
+
+}
+
+hr {
+    background-color: #f6f6f6;
+    height: 1px;
+    border: 0;
+}
+
+h2 {
+    color: #444444;
+}
+
+p {
+    color: #555555;
+}
+
+#mainbox {
+    padding: 20px 30px;
+    background: #FFF;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin: 10px;
+}
+
+.input_number {
+    width: 45%;
+    max-width: 600px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 1% 2%;
+    background: #F8F8F8;
+    border-radius: 20px;
+}
+
+.input_range {
+    width: 80%;
+    max-width: 80%;
+    cursor: pointer;
+    margin: 1rem 4rem;
+}
+
+
+.margin {
+    margin-bottom: 20px;
+}

@@ -119,11 +119,9 @@ function App() {
     <>
       <Header />
       <hr />
-      <div>
-        <h2>예금비교</h2>
-        <hr />
-        <Input onNumberChange={handleNumberChange} onSliderChange={handleSliderChange} />
-      </div>
+
+      <Input onNumberChange={handleNumberChange} onSliderChange={handleSliderChange} />
+
       <Clicker input={number} value={sliderValue} firstItem={firstItem} secondItem={secondItem} />
     </>
   );

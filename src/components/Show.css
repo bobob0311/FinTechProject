@@ -1,0 +1,71 @@
+.pad {
+    padding: 20px 240px 120px 240px;
+}
+
+.optimalbox {
+    padding: 20px 60px;
+    background: #F8F8F8;
+    border-radius: 15px;
+    margin: 10px
+}
+
+.tablebox {
+    padding: 0px 20px 10px 20px;
+    background: #F8F8F8;
+    border-radius: 15px;
+    margin: 30px
+}
+
+
+
+/* 표 스타일 */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+/* 표 내용 셀 스타일 */
+table td {
+    padding: 10px;
+    text-align: center;
+    border: none;
+
+
+}
+
+/* 첫 번째 행의 스타일 (표 헤더) */
+table thead tr {
+    height: 40px;
+    color: #444444;
+    font-weight: bold;
+    border-radius: 20px 20px 0 0;
+
+}
+
+/* 나머지 행들의 스타일 */
+table tbody tr {
+    height: 55px;
+    background-color: #fff;
+    cursor: pointer;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 호버되지 않은 행들의 스타일 */
+table tbody tr:not(:hover) {
+    transform: scale(0.97);
+    opacity: 0.6;
+}
+
+/* 마우스 호버 시 행 배경색 스타일 */
+table tbody tr:hover {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #415eff5d;
+    transform: scale(1.0);
+    opacity: 1.0;
+}

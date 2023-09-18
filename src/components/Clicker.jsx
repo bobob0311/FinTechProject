@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Show from './Show';
+import "./Clicker.css";
 
 export default function Clicker({ input, value, firstItem, secondItem }) {
 
@@ -20,11 +21,16 @@ export default function Clicker({ input, value, firstItem, secondItem }) {
 
 
     return (
-        <div>
-            <span onClick={handleButtonClick}>금융상품 검색 </span>
-            {showClick && (
-                <Show input={amount} firstItem={item} secondItem={secondItem} />
-            )}
-        </div>
+        <>
+            <div className="clicker" onClick={handleButtonClick}>
+                <p className="text">금융상품 검색</p>
+            </div>
+            <div className="clicker-container">
+
+                {showClick && (
+                    <Show input={amount} firstItem={item} secondItem={secondItem} />
+                )}
+            </div>
+        </>
     );
 }
