@@ -3,6 +3,7 @@ import { useState } from "react";
 // 사용자가 기한과 금액을 입력할 수 있는 형식을 만들고 이를 상위 컴포넌트에 전달하도록 생성
 
 export default function Input({ onNumberChange, onSliderChange }) {
+
     const [number, setNumber] = useState("");
     const [sliderValue, setSliderValue] = useState(0);
 
@@ -12,26 +13,35 @@ export default function Input({ onNumberChange, onSliderChange }) {
         onNumberChange(newNumber);
     };
 
-
-
     const handleSliderChange = (event) => {
         const newValue = event.target.value;
         setSliderValue(newValue);
         onSliderChange(newValue);
     };
 
+    let message = "100만원에서 10억 사이의 숫자를 입력해주세요"
 
+    if (number > 1000000000) {
+        message = "10억보다 작게 설정해주세요";
+    } else if (number < 1000000) {
+        message = "100만원보다 크게 설정해주세요";
+    } else if (number > 1000000 && number < 1000000000) {
+        message = "Good";
+    }
 
     return (
         <>
-            <div>
-                <div>숫자 입력</div>
-                <input type="number" value={number} onChange={handleNumberChange} />
 
+            <div>
+                <h3>예치 금액</h3>
+                <input type="number" placeholder={"금액을 입력하세요"} value={number} onChange={handleNumberChange} /> 원
             </div>
 
+            <span>{message}</span>
+
+
             <div>
-                <h2>기한 설정</h2>
+                <h3>예치기한(개월)</h3>
                 <input
                     type="range"
                     min="0"
@@ -49,8 +59,7 @@ export default function Input({ onNumberChange, onSliderChange }) {
                     <option value="18">18</option>
                 </datalist>
 
-                <p>선택한 값: {sliderValue}</p>
-
+                <h4>{sliderValue} 개월</h4>
             </div>
         </>
     );

@@ -21,8 +21,7 @@ export default function Clicker({ input, value, firstItem, secondItem }) {
 
     return (
         <div>
-            <p>밑에 버튼을 누르면 이제 우대조건 등이 나옴</p>
-            <button onClick={handleButtonClick}>Click</button>
+            <span onClick={handleButtonClick}>금융상품 검색 </span>
             {showClick && (
                 <Show input={amount} firstItem={item} secondItem={secondItem} />
             )}
