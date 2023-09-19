@@ -29,8 +29,9 @@ export default function Input({ onNumberChange, onSliderChange }) {
 
     } else if (number >= 1000000 && number <= 1000000000) {
         message = "Good";
-
     }
+
+
 
 
     return (
@@ -55,7 +56,7 @@ export default function Input({ onNumberChange, onSliderChange }) {
                     </div>
 
                     <span style={{ color: number < 10000000000 && number > 1000000 ? "green" : "black" }}>{message}</span>
-
+                    <span> {number}</span>
 
                     <div>
                         <p className="p1">예치기한(개월)</p>

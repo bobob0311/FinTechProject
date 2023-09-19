@@ -26,7 +26,7 @@ export default function ListItem({ id, bank_name, item_name, interest_rate, meth
 
 
                     <div className="show">
-                        <div>가입 방법 : {method}</div>
+                        <div>기간,최대한도, 가입방법,가입대상,우대조건 : {method}</div>
                         <div>가입 방법 : {method}</div>
                         {link !== null && (
                             <div>
