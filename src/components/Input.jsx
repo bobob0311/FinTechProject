@@ -69,11 +69,11 @@ export default function Input({ onNumberChange, onSliderChange }) {
                             value={sliderValue}
                             onChange={handleSliderChange}
                         />
-                        <datalist id="markers">
-                            <option value="0">0</option>
-                            <option value="6">6</option>
-                            <option value="12">12</option>
-                            <option value="18">18</option>
+                        <datalist className="hi" id="markers">
+                            <option value="0"> 0 </option>
+                            <option value="6"> 6 </option>
+                            <option value="12"> 12 </option>
+                            <option value="18"> 18 </option>
                         </datalist>
                         <p>{sliderValue} 개월</p>
                     </div>

@@ -25,6 +25,8 @@ export default function Clicker({ input, value, firstItem, secondItem }) {
             <div className="clicker" onClick={handleButtonClick}>
                 <p className="text">금융상품 검색</p>
             </div>
+
+
             <div className="clicker-container">
 
                 {showClick && (

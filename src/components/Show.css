@@ -69,3 +69,58 @@ table tbody tr:hover {
     transform: scale(1.0);
     opacity: 1.0;
 }
+
+.details-container {
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+
+.details-item {
+    margin: 5px 0;
+    height: 55px;
+    background-color: #fff;
+    cursor: pointer;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 호버되지 않은 행들의 스타일 */
+.details-item:not(:hover) {
+    transform: scale(1);
+    opacity: 0.6;
+}
+
+/* 마우스 호버 시 행 배경색 스타일 */
+.details-item:hover {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #d3d3d35d;
+    transform: scale(1.0);
+    opacity: 1.0;
+}
+
+.dd {
+    display: flex;
+    justify-content: space-between;
+    /* 내부 요소 사이의 간격을 동일하게 배분 */
+    width: 700px;
+    /* 원하는 너비로 설정 */
+}
+
+.ss {
+    flex: 1;
+    /* 동일한 너비로 요소를 확장 */
+    text-align: center;
+    /* 가운데 정렬 (선택 사항) */
+    border: 1px 0px solid #d2d2d2;
+    /* 테두리 스타일 (선택 사항) */
+    padding: 5px;
+    /* 내부 여백 (선택 사항) */
+}
+
+.show {
+    padding: 20px 0px 0px 50px
+}

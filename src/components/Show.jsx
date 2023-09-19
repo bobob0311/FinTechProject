@@ -40,36 +40,35 @@ export default function Show({ input, firstItem, secondItem }) {
                 <h2>현재 최적의 상품은?</h2>
                 <div className="optimalbox">
                     <Optimal data={item} input={input} />
+
                 </div>
-                <hr />
+
             </div>
             <h2>우대 금리가 높은 순서에 따른 나열</h2>
 
 
-            <div className="tablebox">
-                <table>
-                    <thead>
-                        <tr>
-                            <th className="table-header">은행</th>
-                            <th className="table-header">상품명</th>
-                            <th className="table-header">기본금리</th>
-                            <th className="table-header">우대적용금리</th>
-                        </tr>
-                    </thead>
 
-                    {item.slice(0, 5).map((i) => (
-                        <ListItem
-                            id={i.id}
-                            bank_name={i.bank_name}
-                            item_name={i.item_name}
-                            interest_rate={i.interest_rate}
-                            ca_interest_rate={i.ca_interest_rate}
-                            who={i.who}
-                            method={i.method}
-                            link={i.link} />
-                    ))}
+            <div>
+                <div className="dd">
+                    <span className="ss">은행명</span>
+                    <span className="ss">상품명</span>
+                    <span className="ss">기본금리</span>
+                    <span className="ss">우대금리</span>
+                </div>
 
-                </table>
+                {item.slice(0, 5).map((i) => (
+                    <ListItem
+                        id={i.id}
+                        bank_name={i.bank_name}
+                        item_name={i.item_name}
+                        interest_rate={i.interest_rate}
+                        ca_interest_rate={i.ca_interest_rate}
+                        who={i.who}
+                        method={i.method}
+                        link={i.link} />
+                ))}
+
+
             </div>
 
             <ul>

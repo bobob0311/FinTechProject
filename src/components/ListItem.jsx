@@ -13,52 +13,36 @@ export default function ListItem({ id, bank_name, item_name, interest_rate, meth
     }
     return (
         <>
-            {/*
-            <li key={id} onClick={handleToggle}>
-                은행이름: {bank_name} 상품이름: {item_name} 기본금리: {interest_rate}, 우대적용금리 {ca_interest_rate}
-            </li>
 
-            버튼에 onClick 이벤트 추가 
+            <div className="dd" onClick={handleToggle} key={id}>
+                <span className="ss">{bank_name}</span>
+                <span className="ss">{item_name}</span>
+                <span className="ss">{interest_rate}%</span>
+                <span className="ss">{ca_interest_rate}%</span>
+            </div>
+
             {toggle &&
-                <>
-                    <div>
-                        가입 방법 {method}
-                    </div>
-                    <div>
-                        가입대상 {who}
-                    </div>
-                    {link !== null && (
-                        <div>
-                            <a href={link} target="_blank"></a>
-                        </div>)}
+                <div>
 
-                </>
-            }
-            */}
 
-            <tbody>
-                <tr onClick={handleToggle} key={id}>
-                    <td>{bank_name}</td>
-                    <td>{item_name}</td>
-                    <td>{interest_rate}</td>
-                    <td>{ca_interest_rate}</td>
-                </tr>
-                {toggle &&
-                    <>
-                        <div>
-                            가입 방법 {method}
-                        </div>
-                        <div>
-                            가입대상 {who}
-                        </div>
+                    <div className="show">
+                        <div>가입 방법 : {method}</div>
+                        <div>가입 방법 : {method}</div>
                         {link !== null && (
                             <div>
                                 <a href={link} target="_blank"></a>
-                            </div>)}
-                    </>
-                }
-            </tbody>
+                            </div>
+                        )}
+                    </div>
 
+
+
+
+
+                </div>
+
+
+            }
 
         </>
 

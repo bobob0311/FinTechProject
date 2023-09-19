@@ -1,0 +1,57 @@
+        /* 기본 스타일 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        /* 헤더 스타일 설정 */
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            background-color: #272D4E;
+            color: #272D4E;
+            text-align: center;
+            height: 60px;
+            padding: 0px 20px;
+            z-index: 1000;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        /* 내비게이션 스타일 설정 */
+        nav {
+            padding: 0rem 8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 30px;
+
+        }
+
+        /* 내비게이션 링크 스타일 설정 */
+        nav a {
+            margin: 0px;
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        /* 내비게이션 메뉴 목록 스타일 설정 */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* 컨텐츠 마진 스타일 설정 */
+        .margin {
+            margin: 5px 22px;
+            padding: 20px;
+        }

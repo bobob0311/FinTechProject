@@ -49,3 +49,22 @@ p {
 .margin {
     margin-bottom: 20px;
 }
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space-collapse: collapse;
+    text-wrap: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+datalist #markers {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    border: 10px solid #ccc;
+    z-index: 1;
+}
