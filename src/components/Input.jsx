@@ -24,13 +24,24 @@ export default function Input({ onNumberChange, onSliderChange }) {
 
     if (number > 1000000000) {
         message = "10억보다 작게 설정해주세요";
-    } else if (number < 1000000) {
+    } else if (number < 1000000 && number > 0) {
         message = "100만원보다 크게 설정해주세요";
 
     } else if (number >= 1000000 && number <= 1000000000) {
         message = "Good";
     }
 
+
+    let numberMessage = null;
+    if (number < 1) {
+        numberMessage = null
+    } else if (number < 10000) {
+        numberMessage = number + "원";
+    } else if (number < 100000000) {
+        numberMessage = parseInt(number / 10000) + "만" + (number % 10000) + "원";
+    } else if (number < 1000000000) {
+        numberMessage = parseInt(number / 100000000) + "억 " + parseInt(number % 100000000 / 10000) + "만 " + (number % 10000) + "원";
+    }
 
 
 
@@ -55,8 +66,8 @@ export default function Input({ onNumberChange, onSliderChange }) {
                         /> 원
                     </div>
 
-                    <span style={{ color: number < 10000000000 && number > 1000000 ? "green" : "black" }}>{message}</span>
-                    <span> {number}</span>
+                    <span style={{ color: number < 1000000000 && number > 1000000 ? "green" : "black" }}>{message}</span>
+                    <div>{numberMessage}</div>
 
                     <div>
                         <p className="p1">예치기한(개월)</p>
